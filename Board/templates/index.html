@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>목록</h2>
+{% if not posts %}
+  <p>글이 없습니다.</p>
+{% else %}
+  <ul>
+    {% for p in posts %}
+      <li>
+        <a href="{{ request.url_for('show_post', post_id=p.id) }}">{{ p.title }}</a>
+        <small> ({{ p.created_at }})</small>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{% endblock %}

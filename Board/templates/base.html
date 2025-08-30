@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>메모리 게시판 (FastAPI)</title>
+  <style>
+    body { max-width: 720px; margin: 40px auto; font-family: system-ui, sans-serif; }
+    a { text-decoration: none; color: #0a58ca; }
+    .btn { display:inline-block; padding:6px 12px; border:1px solid #ccc; border-radius:6px; }
+    .btn-danger { border-color:#dc3545; color:#dc3545; }
+    .error { color:#dc3545; margin:8px 0; }
+    textarea { width:100%; height:200px; }
+    input[type=text] { width:100%; }
+    header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+  </style>
+</head>
+<body>
+<header>
+  <h1><a href="{{ request.url_for('list_posts') }}">메모리 게시판</a></h1>
+  <a class="btn" href="{{ request.url_for('new_post') }}">+ 새 글</a>
+</header>
+{% block content %}{% endblock %}
+</body>
+</html>
