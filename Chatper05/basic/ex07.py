@@ -5,7 +5,7 @@ app = FastAPI(title="Ex07 - Async")
 
 @app.get("/slow")
 async def slow():
-    await asyncio.sleep(30)  # I/O 대기 시뮬레이션
+    await asyncio.sleep(10)  # I/O 대기 시뮬레이션
     return {"done": True}
 
 #async def 함수 사용 → 비동기 처리 가능.
