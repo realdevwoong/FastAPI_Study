@@ -21,7 +21,3 @@ async def set_session(request: Request):
 async def get_session(request: Request):
     username = request.session.get("username")
     return PlainTextResponse(f"세션 값: {username}")
-
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000, reload=True)
